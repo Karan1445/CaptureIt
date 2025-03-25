@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const Schema = require("./Schemas/NotifySchemas");
 
 mongoose.connect("mongodb+srv://goheljitu164:Karan8141@cluster0.rzxbeqf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(()=>{
-    const app=express();
+    const app=express()
     app.use(cors());
     app.use(bodyParser.json());   
    
@@ -55,7 +55,7 @@ mongoose.connect("mongodb+srv://goheljitu164:Karan8141@cluster0.rzxbeqf.mongodb.
     })//all with approval
     app.get("/acount",async(req,res)=>{
         const data=await Schema.find({type:"success"}).count()
-        res.json(data/2+.5);
+        res.json(data);
     })
     app.get("/dcount",async(req,res)=>{
         const data=await Schema.find({type:"decline"}).count()
